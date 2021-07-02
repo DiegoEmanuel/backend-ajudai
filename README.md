@@ -1,7 +1,7 @@
 # Laravel RESTful API
 
 
-<img src="preview.png" width="150px" alt="Preview">
+<img src="preview.png" width="700px" alt="Preview">
 ## Endpoints
 
 Get all Donates: `GET /api/donate`
