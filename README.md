@@ -1,8 +1,8 @@
 # Laravel RESTful API
 
-<img src="../preview.png"width="150px">
+<img src="preview.png" width="150px" alt="Preview">
 </img>
-A simple example of how to create a RESTful API in Laravel 8.
+
 
 ## Endpoints
 
