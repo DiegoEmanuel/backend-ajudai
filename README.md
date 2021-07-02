@@ -3,6 +3,7 @@
 <img src="preview.png" width="150px" alt="Preview">
 </img>
 
+<img src="..\preview.png" width=150px></img>
 
 ## Endpoints
 
