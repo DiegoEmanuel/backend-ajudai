@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonationTable extends Migration
+class CreateDonationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,6 @@ class CreateDonationTable extends Migration
             $table->id('donation_id');
             $table->date('date_donation');
             $table->timestamps('horary_donation');
-
             $table->foreignId('donation_id')->constrained('donation')->onDelete('cascade');
 
         });
@@ -30,6 +29,6 @@ class CreateDonationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donation');
+        Schema::dropIfExists('donations');
     }
 }
