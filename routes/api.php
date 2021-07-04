@@ -1,7 +1,7 @@
 <?php
 use App\Models\Donate;
 use App\Models\Post;
-use App\Http\Controllers\PostsApiController;
+use App\Http\Controllers\AjudaiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/posts', [PostsApiController::class, 'index']);
-// Route::post('/posts', [PostsApiController::class, 'store']);
-// Route::put('/posts/{post}', [PostsApiController::class, 'update']);
-// Route::delete('/posts/{post}', [PostsApiController::class, 'destroy']);
-Route::get('/donate', [PostsApiController::class, 'index']);
-// Route::get('/donate/{donate}', [PostsApiController::class, 'show']);
-Route::post('/donate', [PostsApiController::class, 'store']);
-Route::put('/donates/{donate}', [PostsApiController::class, 'update']);
-Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);
+
+Route::get('/donation', [AjudaiController::class, 'index']);
+// Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);

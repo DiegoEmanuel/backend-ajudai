@@ -1,11 +1,10 @@
 <?php
 
-use App\Association;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsTable extends Migration
+class CreateSocialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +13,15 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('socials', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('association_id');
-            $table->string('name');
+            $table->string('name_social',45);
+            $table->string('link_social',45);
+
+
             $table->timestamps();
-
             $table->foreign('association_id')->references('id')->on('associations')->onDelete('cascade');
-
         });
     }
 
@@ -32,6 +32,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('socials');
     }
 }

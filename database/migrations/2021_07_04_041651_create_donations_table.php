@@ -21,10 +21,12 @@ class CreateDonationsTable extends Migration
             $table->timestamps('');
 
             $table->foreign('id_donor')->references('id')->on('donors')->onDelete('cascade');
-            $table->foreign('id_donor_adress')->references('id')->on('adresses')->onDelete('cascade');
             $table->foreign('id_association')->references('id')->on('associations')->onDelete('cascade');
+            $table->foreign('id_donor_adress')->references('id')->on('adresses')->onDelete('cascade');
         });
     }
+
+
 
     /**
      * Reverse the migrations.
