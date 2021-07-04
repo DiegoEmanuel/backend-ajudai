@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Donor;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use PHPUnit\Framework\Constraint\Constraint;
 
 class CreateAdressesTable extends Migration
 {
@@ -16,13 +16,16 @@ class CreateAdressesTable extends Migration
     {
         Schema::create('adresses', function (Blueprint $table) {
             $table->id();
-            $table->string('rua',100);
-            $table->string('dristrict',45);
-            $table->string('number',6);
-            $table->string('complement',6)->nullable();
+            $table->unsignedBigInteger('name_donor');
+            $table->unsignedBigInteger('id_city');
+            $table->string('street_donor',100);
+            $table->string('dristrict_donor',45);
+            $table->string('number_donor',6);
+            $table->string('complement_donor',6)->nullable();
             $table->timestamps();
 
-            $table->foreignId('donor_id')->constrained('donor')->onDelete('cascade');
+            $table->foreign('name_donor')->references('id')->on('donors')->onDelete('cascade');
+            $table->foreign('id_city')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

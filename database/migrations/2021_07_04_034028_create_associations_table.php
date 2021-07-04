@@ -16,6 +16,7 @@ class CreateAssociationsTable extends Migration
         Schema::create('associations', function (Blueprint $table) {
             $table->id();
             $table->string('name_association',100);
+            $table->unsignedBigInteger('city_id');
             $table->string('description',100);
             $table->string('leader_association',50);
             $table->string('email_association',80);
@@ -27,7 +28,7 @@ class CreateAssociationsTable extends Migration
             $table->string('avatar_associations',200)->nullable();
             $table->text('description_associations',1000)->nullable();
 
-            $table->foreingId('city_id')->constrained('cities')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
 
             $table->timestamps();
         });
