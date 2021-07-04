@@ -16,12 +16,13 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_donor');
-            // $table->unsignedBigInteger('id_association');
+            $table->unsignedBigInteger('id_association');
             $table->unsignedBigInteger('id_donor_adress');
             $table->timestamps('');
 
             $table->foreign('id_donor')->references('id')->on('donors')->onDelete('cascade');
             $table->foreign('id_donor_adress')->references('id')->on('adresses')->onDelete('cascade');
+            $table->foreign('id_association')->references('id')->on('associations')->onDelete('cascade');
         });
     }
 
@@ -35,3 +36,4 @@ class CreateDonationsTable extends Migration
         Schema::dropIfExists('donations');
     }
 }
+
