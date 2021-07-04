@@ -21,5 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/donation', [AjudaiController::class, 'index']);
+Route::get('/', [AjudaiController::class, 'index']);
+Route::get('/donation/create', [AjudaiController::class, 'create'])->middleware('auth');
+Route::post('/donation', [AjudaiController::class, '']);
 // Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);
