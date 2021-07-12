@@ -40,6 +40,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 | Once we have the application, we can handle the incoming request using
 | the application's HTTP kernel. Then, we will send the response back
+|committing here because i'm working in a project that not counts that i'm committing every day
 | to this client's browser, allowing them to enjoy our application.
 |
 */
