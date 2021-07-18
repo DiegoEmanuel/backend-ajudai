@@ -4,8 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
+        <title>Api do Ajuai com Laravel</title>
+        <ul>
+            <li>index – Lista os dados da tabela</li>
+            <li>show – Mostra um item específco</li>
+            <li>create – Retorna a View para criar um item da tabela</li>
+            <li>edit – Retorna a View para edição do dado</li>
+            <li>store – Salva o novo item na tabela</li>
+            <li>destroy – Remove o dado</li>
+            <li>update – Salva a atualização do dado</li>
+        </ul>
+        donor
+        <p>address</p>
+            <p>cities</p>
+                <p>donations</p>
+                    <p>donations_items</p>
+                        <p>associations</p>
+                            <p>campaigns</p>
+                                <p>projects</p>
+                                    <p>social</p>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
