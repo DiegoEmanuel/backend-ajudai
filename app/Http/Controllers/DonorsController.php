@@ -14,7 +14,8 @@ class DonorsController extends Controller
      */
     public function index()
     {
-        //
+        $donor=Donor::all();
+        return $donor;
     }
 
     /**
