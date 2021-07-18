@@ -87,8 +87,8 @@ class CitiesController extends Controller
         $data = $request->all();
 
         City::findOrFail($request->id)->update($data);
-
-        return redirect('/dashboard')->with('msg', 'Cidade editada!');
+        echo"editado, redirect to ? ";
+        // return redirect('/')->with('msg', 'Cidade editada!');
     }
 
     /**
