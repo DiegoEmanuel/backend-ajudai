@@ -2,6 +2,7 @@
 use App\Models\Donate;
 use App\Models\Post;
 use App\Http\Controllers\AjudaiController;
+use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\DonorsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/donors/show', [DonorsController::class, 'index']);
-Route::POST('/donors', [DonorsController::class, 'create']);
-Route::get('/donors', [AjudaiController::class, 'store']);
+Route::get('/donors', [DonorsController::class, 'create']);
+Route::post('/donors', [DonorsController::class, 'store']);
+Route::post('/cities', [CitiesController::class, 'store']);
+Route::get('/cities', [CitiesController::class, 'index']);
 Route::put('/donors/update/{id}',[AjudaiController::class,'update']);
 // Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);

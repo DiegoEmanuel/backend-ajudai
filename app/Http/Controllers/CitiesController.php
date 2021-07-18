@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Donor;
+use App\City;
 use Illuminate\Http\Request;
 
-class DonorsController extends Controller
+class CitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class DonorsController extends Controller
      */
     public function index()
     {
-        //
+        $citie=City::all();
+        echo"Mostrando todas cidades";
+        echo $citie;
     }
 
     /**
@@ -24,7 +26,7 @@ class DonorsController extends Controller
      */
     public function create()
     {
-        return view('donors.create');
+        //
     }
 
     /**
@@ -35,23 +37,23 @@ class DonorsController extends Controller
      */
     public function store(Request $request)
     {
+        //create cities
 
-        $donor = new Donor;
+        $cities = new City;
 
-        $donor->name_donor = $request->name_donor;
-        $donor->email_donor = $request->email_donor;
-        $donor->phone = $request->phone;
-        $donor->password_donor = $request->password_donor;
+        $cities->name_city = $request->name_city;
+        $cities->uf_city = $request->uf_city;
 
 
-        $user = auth()->user();
+        // $user = auth()->user();
 
-        $donor->save();
+        $cities->save();
 
         echo"retornar para alguma view";
     }
 
     /**
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -59,7 +61,6 @@ class DonorsController extends Controller
     public function show($id)
     {
         //
-        // * Display the specified resource.*
     }
 
     /**
