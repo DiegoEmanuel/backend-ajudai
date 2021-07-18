@@ -55,7 +55,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('/donors', [DonorsController::class, 'create']);
 Route::get('/donors', [DonorsController::class, 'index']);
 Route::post('/donors', [DonorsController::class, 'store']);
-
+Route::put('/donors/update/{id}',[DonorsController::class,'update']);
 
 Route::get('/cities', [CitiesController::class, 'index']);
 Route::post('/cities', [CitiesController::class, 'store']);

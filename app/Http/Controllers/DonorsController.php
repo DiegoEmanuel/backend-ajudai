@@ -43,7 +43,7 @@ class DonorsController extends Controller
         $donor->phone = $request->phone;
         $donor->password_donor = $request->password_donor;
 
-        $user = auth()->user();
+        // $user = auth()->user();
         $donor->save();
         echo"retornar para alguma view";
     }
