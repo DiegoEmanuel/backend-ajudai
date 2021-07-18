@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Donor;
 use Illuminate\Http\Request;
 
 class CitiesController extends Controller
@@ -82,7 +83,12 @@ class CitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = $request->all();
+
+        Donor::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Cidade editada!');
     }
 
     /**
