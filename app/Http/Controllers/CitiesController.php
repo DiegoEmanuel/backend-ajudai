@@ -14,10 +14,8 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        // $citie=City::all();
-        // // echo"Mostrando todas cidades";
-        // return $citie;
-        echo "test";
+        $citie=City::all();
+        return $citie;
     }
 
     /**
