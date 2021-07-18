@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\City;
-use App\Donor;
+use App\Adress;
+use Facade\Ignition\Middleware\AddLogs;
+use Faker\Provider\ar_JO\Address;
 use Illuminate\Http\Request;
 
-class CitiesController extends Controller
+class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        $citie=City::all();
-        return $citie;
+        $address=Adress::all();
+        return $address;
     }
 
     /**
@@ -26,7 +27,7 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        //
+        echo"abrir view store para criar outro addre";
     }
 
     /**
@@ -37,19 +38,17 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
-        //create cities
 
-        $cities = new City;
+        $address = Adress::create($request->all());
+        $address = new Adress;
 
-        $cities->name_city = $request->name_city;
-        $cities->uf_city = $request->uf_city;
+        $address->name_donor()->create($request->all());
+        $address->id_city()->create($request->all());
 
-
-        // $user = auth()->user();
-
-        $cities->save();
-
-        echo"retornar para alguma view";
+        $address->street_donor = $request->street_donor;
+        $address->dristrict_donor = $request->dristrict_donor;
+        $address->number_donor = $request->number_donor;
+        $address->complement_donor = $request->complement_donor;
     }
 
     /**
@@ -83,10 +82,7 @@ class CitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        City::findOrFail($request->id)->update($data);
-        echo"editado, redirect to ? ";
-        // return redirect('/')->with('msg', 'Cidade editada!');
+        //
     }
 
     /**
