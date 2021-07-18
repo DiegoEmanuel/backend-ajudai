@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('/', [CitiesController::class, 'index']);
 Route::get('/donors/show', [DonorsController::class, 'index']);
 Route::get('/donors', [DonorsController::class, 'create']);
 Route::post('/donors', [DonorsController::class, 'store']);
