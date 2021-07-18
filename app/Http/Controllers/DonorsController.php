@@ -16,7 +16,7 @@ class DonorsController extends Controller
     {
         $donors=Donor::all();
         return $donors;
-        echo"test";
+        // echo"test";
     }
 
     /**

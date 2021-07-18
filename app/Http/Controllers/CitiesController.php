@@ -86,7 +86,7 @@ class CitiesController extends Controller
 
         $data = $request->all();
 
-        Donor::findOrFail($request->id)->update($data);
+        City::findOrFail($request->id)->update($data);
 
         return redirect('/dashboard')->with('msg', 'Cidade editada!');
     }
