@@ -53,7 +53,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route::get('/donors/show', [DonorsController::class, 'show']);
 // Route::get('/donors', [DonorsController::class, 'create']);
-Route::get('/donors', [DonorsController::class, 'index']);
+// Route::get('/donors', [DonorsController::class, 'index']);
 // Route::post('/donors', [DonorsController::class, 'store']);
 
 
