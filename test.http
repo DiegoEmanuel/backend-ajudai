@@ -2,12 +2,14 @@ GET http://restfulapi.test/api/posts
 
 ###
 
-POST http://restfulapi.test/api/posts
+POST http://api-ajudai.herokuapp.com/api/donors
 Content-Type: application/json
 
 {
-    "title": "My brand new title",
-    "content": "My brand new content"
+    "name_donor": "My brand new title",
+    "email_donor": "My brand new content",
+    "phone":"132123",
+    "pasword":"senha123"
 }
 
 ###

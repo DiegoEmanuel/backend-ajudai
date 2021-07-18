@@ -16,7 +16,6 @@ class DonorsController extends Controller
     {
         $donors=Donor::all();
         return $donors;
-        // echo"test";
     }
 
     /**
@@ -37,7 +36,6 @@ class DonorsController extends Controller
      */
     public function store(Request $request)
     {
-
         $donor = new Donor;
 
         $donor->name_donor = $request->name_donor;
@@ -45,11 +43,8 @@ class DonorsController extends Controller
         $donor->phone = $request->phone;
         $donor->password_donor = $request->password_donor;
 
-
         $user = auth()->user();
-
         $donor->save();
-
         echo"retornar para alguma view";
     }
 

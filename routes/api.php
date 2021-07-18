@@ -50,16 +50,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', [CitiesController::class, 'index']);
+
 // Route::get('/donors/show', [DonorsController::class, 'show']);
-Route::get('/donors', [DonorsController::class, 'create']);
+// Route::get('/donors', [DonorsController::class, 'create']);
 Route::get('/donors', [DonorsController::class, 'index']);
-Route::post('/donors', [DonorsController::class, 'store']);
+// Route::post('/donors', [DonorsController::class, 'store']);
 
 
 Route::get('/cities', [CitiesController::class, 'index']);
 Route::post('/cities', [CitiesController::class, 'store']);
 Route::put('/cities/update/{id}',[CitiesController::class,'update']);
+Route::get('/', [CitiesController::class, 'index']);
 // Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);
 
 
