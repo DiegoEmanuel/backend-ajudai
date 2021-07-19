@@ -14,4 +14,7 @@ class Donor extends Model
     public function donation(){
         return $this->hasMany('App\Models\Donation');
     }
+    public function address(){
+        return $this->hasOne(Adress::class,'name_donor','name_donor');
+    }
 }

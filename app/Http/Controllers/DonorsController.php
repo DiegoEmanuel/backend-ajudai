@@ -55,8 +55,14 @@ class DonorsController extends Controller
      */
     public function show($id)
     {
-        //
-        // * Display the specified resource.*
+        $donor = Donor::where('id',$id)->first();
+            if($donor){
+                return $donor;
+            }
+        $adress = $donor->adress()->first();
+        if ($adress){
+            echo "endereco: {$adress->street},";
+        }
     }
 
     /**
