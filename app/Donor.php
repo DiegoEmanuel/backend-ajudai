@@ -15,6 +15,6 @@ class Donor extends Model
         return $this->hasMany('App\Models\Donation');
     }
     public function address(){
-        return $this->hasOne(Adress::class,'name_donor','name_donor');
+        return $this->hasOne(Adress::class,'city_id','name_donor');
     }
 }

@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Http\Controllers\AjudaiController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\DonorsController;
+use App\Http\Controllers\AssociationController;
 use App\Http\Controllers\AddressController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -68,4 +69,6 @@ Route::get('/address', [AddressController::class, 'index']);
 Route::post('/address', [AddressController::class, 'store']);
 Route::put('/address/update/{id}', [AddressController::class, 'update']);
 
+Route::get('/association', [AssociationController::class, 'index']);
+Route::post('/association', [AssociationController::class, 'store']);
 

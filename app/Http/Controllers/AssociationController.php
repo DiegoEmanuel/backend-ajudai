@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Adress;
-use Facade\Ignition\Middleware\AddLogs;
-use Faker\Provider\ar_JO\Address;
+use App\Association;
 use Illuminate\Http\Request;
 
-class AddressController extends Controller
+class AssociationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class AddressController extends Controller
      */
     public function index()
     {
-        $address=Adress::all();
-        return $address;
+        $Association=Association::all();
+        return $Association;
     }
 
     /**
@@ -27,7 +25,7 @@ class AddressController extends Controller
      */
     public function create()
     {
-        echo"abrir view store para criar outro addre";
+        //
     }
 
     /**
@@ -38,9 +36,10 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        // echo "store";exit();
-        $address = Adress::create($request->all());
-        return $address;
+        $Association = Association::create($request->all());
+
+        $Association=Association::all();
+        return $Association;
     }
 
     /**
@@ -51,14 +50,7 @@ class AddressController extends Controller
      */
     public function show($id)
     {
-        $address = Adress::where('id',$id)->first();
-            if($address){
-                return $address;
-            }
-        // $adress = $address->adress()->first();
-        // if ($adress){
-        //     echo "endereco: {$adress->street},";
-        // }
+        //
     }
 
     /**
