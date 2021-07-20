@@ -63,7 +63,7 @@ Route::put('/cities/update/{id}',[CitiesController::class,'update']);
 Route::get('/', [CitiesController::class, 'index']);
 // Route::delete('/donates/{donate}', [PostsApiController::class, 'destroy']);
 
-
+Route::get('/address/{id}', [AddressController::class, 'show']);
 Route::get('/address', [AddressController::class, 'index']);
 Route::post('/address', [AddressController::class, 'store']);
 Route::put('/address/update/{id}', [AddressController::class, 'update']);

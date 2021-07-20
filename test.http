@@ -1,15 +1,18 @@
 GET http://restfulapi.test/api/posts
-
+Content-Type: application/json
+###
+GET http://laravel-rest.test/api/donors
+Content-Type: application/json
 ###
 
-POST http://api-ajudai.herokuapp.com/api/donors
+POST http://laravel-rest.test/api/donors
 Content-Type: application/json
 
 {
-    "name_donor": "My brand new title",
-    "email_donor": "My brand new content",
-    "phone":"132123",
-    "pasword":"senha123"
+    "name_donor": "teste-a-a-a",
+    "email_donor": "1234@gmail.com",
+    "phone":"1321232313342",
+    "password_donor":"senha123",
 }
 
 ###

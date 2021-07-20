@@ -16,6 +16,7 @@ class AddressController extends Controller
      */
     public function index()
     {
+        // echo ("texto ");exit(1);
         $address=Adress::all();
         return $address;
     }
@@ -38,17 +39,9 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-
+        // echo "store";exit();
         $address = Adress::create($request->all());
-        $address = new Adress;
-
-        $address->name_donor()->create($request->all());
-        $address->id_city()->create($request->all());
-
-        $address->street_donor = $request->street_donor;
-        $address->dristrict_donor = $request->dristrict_donor;
-        $address->number_donor = $request->number_donor;
-        $address->complement_donor = $request->complement_donor;
+        return $address;
     }
 
     /**
@@ -59,7 +52,14 @@ class AddressController extends Controller
      */
     public function show($id)
     {
-        //
+        $address = Adress::where('id',$id)->first();
+            if($address){
+                return $address;
+            }
+        // $adress = $address->adress()->first();
+        // if ($adress){
+        //     echo "endereco: {$adress->street},";
+        // }
     }
 
     /**

@@ -12,10 +12,11 @@ class Adress extends Model
     protected $fillable =[
         'name_donor',
         'id_city',
+
         'street_donor',
         'dristrict_donor',
         'number_donor',
         'complement_donor',
     ];
-    // foreign('name_donor')**foreign('id_city)
+
 }
